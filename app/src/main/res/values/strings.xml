@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">PLAY OR NOT</string>
+    <string-array name="outlooks">
+        <item>Sunny</item>
+        <item>Overcast</item>
+        <item>Rainy</item>
+
+    </string-array>
+    <string-array name="temperatures">
+        <item>Hot</item>
+        <item>Mild</item>
+        <item>Cold</item>
+
+    </string-array>
+
+    <string-array name="humiditys">
+        <item>High</item>
+        <item>Normal</item>
+
+    </string-array>
+    <string-array name="windys">
+
+        <item>False</item>
+        <item>True</item>
+    </string-array>
+</resources>

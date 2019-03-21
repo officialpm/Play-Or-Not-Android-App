@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="272dp"
+            android:layout_height="71dp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="272dp"
+            android:layout_height="71dp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="105dp" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="272dp"
+            android:layout_height="71dp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="199dp" />
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="272dp"
+            android:layout_height="71dp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="285dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:text="Predict"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="367dp" />
+
+        <TextView
+            android:id="@+id/res"
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:text="Waiting"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="98dp"
+            tools:layout_editor_absoluteY="440dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="© Parth Maniar"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

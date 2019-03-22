@@ -160,15 +160,20 @@ predict.setOnClickListener(new View.OnClickListener() {
                    if(msg.equals("[1]"))
                    {
 
-                        res.setText("You Can Play");
+                        res.setText("PLAY SAFELY \n ENJOY ;)");
                        res.setTextColor(Color.parseColor("#42f46b"));
+                       Toast.makeText(MainActivity.this, "ENJOY",
+                               Toast.LENGTH_SHORT).show();
 
 
                    }
                    else if(msg.equals("[0]"))
                    {
-                       res.setText("ALERT: Don't Play");
+                       res.setText("ALERT: DONT'T PLAY");
                        res.setTextColor(Color.parseColor("#f44141"));
+                       Toast.makeText(MainActivity.this, "ALERT",
+                               Toast.LENGTH_SHORT).show();
+
                    }
                    else
                    {

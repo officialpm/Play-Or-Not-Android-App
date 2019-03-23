@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference myRef = database.getReference("message");
     public String soutlook,shumidity,stemperature,swindy,o,t,h,w;
     private Button predict;
-    TextView res;
+    TextView res,wel;
     String URL = "http://parthdmaniar.pythonanywhere.com/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         res = (TextView)findViewById(R.id.res);
+        wel = (TextView)findViewById(R.id.we);
         predict=(Button)findViewById(R.id.button);
         Spinner outlook =  (Spinner) findViewById(R.id.spinner1);
         Spinner temps =  (Spinner) findViewById(R.id.spinner2);
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                res.setText(value);
+                wel.setText(value);
 
             }
 
@@ -191,7 +192,7 @@ predict.setOnClickListener(new View.OnClickListener() {
                                Toast.LENGTH_SHORT).show();
 
 
-                       myRef.setValue("PLAY SAFELY \n ENJOY ;)");
+                       //myRef.setValue("PLAY SAFELY \n ENJOY ;)");
 
 
                    }
@@ -203,7 +204,7 @@ predict.setOnClickListener(new View.OnClickListener() {
                                Toast.LENGTH_SHORT).show();
 
 
-                       myRef.setValue("ALERT: DONT'T PLAY");
+                       //myRef.setValue("ALERT: DONT'T PLAY");
 
 
 

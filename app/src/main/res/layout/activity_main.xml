@@ -13,6 +13,17 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/we"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Welcome"
+            android:textAlignment="center"
+            android:textColor="?attr/colorPrimaryDark"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="30dp"

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +19,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,7 +34,8 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("message");
     public String soutlook,shumidity,stemperature,swindy,o,t,h,w;
     private Button predict;
     TextView res;
@@ -72,6 +79,24 @@ public class MainActivity extends AppCompatActivity {
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         windy.setAdapter(adapter4);
+
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                res.setText(value);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+
+            }
+        });
 
 
         outlook.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -166,6 +191,9 @@ predict.setOnClickListener(new View.OnClickListener() {
                                Toast.LENGTH_SHORT).show();
 
 
+                       myRef.setValue("PLAY SAFELY \n ENJOY ;)");
+
+
                    }
                    else if(msg.equals("[0]"))
                    {
@@ -173,6 +201,11 @@ predict.setOnClickListener(new View.OnClickListener() {
                        res.setTextColor(Color.parseColor("#f44141"));
                        Toast.makeText(MainActivity.this, "ALERT",
                                Toast.LENGTH_SHORT).show();
+
+
+                       myRef.setValue("ALERT: DONT'T PLAY");
+
+
 
                    }
                    else

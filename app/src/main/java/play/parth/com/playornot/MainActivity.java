@@ -45,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        res = (TextView)findViewById(R.id.res);
-        wel = (TextView)findViewById(R.id.we);
-        predict=(Button)findViewById(R.id.button);
-        Spinner outlook =  (Spinner) findViewById(R.id.spinner1);
-        Spinner temps =  (Spinner) findViewById(R.id.spinner2);
-        Spinner humi =  (Spinner) findViewById(R.id.spinner3);
-        Spinner windy =  (Spinner) findViewById(R.id.spinner4);
+        res = findViewById(R.id.res);
+        wel = findViewById(R.id.we);
+        predict= findViewById(R.id.button);
+        Spinner outlook = findViewById(R.id.spinner1);
+        Spinner temps = findViewById(R.id.spinner2);
+        Spinner humi = findViewById(R.id.spinner3);
+        Spinner windy = findViewById(R.id.spinner4);
 
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
                 R.array.outlooks, android.R.layout.simple_spinner_item);
@@ -186,9 +186,9 @@ predict.setOnClickListener(new View.OnClickListener() {
                    if(msg.equals("[1]"))
                    {
 
-                        res.setText("PLAY SAFELY \n ENJOY ;)");
-                       res.setTextColor(Color.parseColor("#42f46b"));
-                       Toast.makeText(MainActivity.this, "ENJOY",
+                        res.setText("Can Play\nSafely ;)");
+                       res.setTextColor(Color.parseColor("#00cc2f"));
+                       Toast.makeText(MainActivity.this, "Have a nice day :) ",
                                Toast.LENGTH_SHORT).show();
 
 
@@ -198,9 +198,9 @@ predict.setOnClickListener(new View.OnClickListener() {
                    }
                    else if(msg.equals("[0]"))
                    {
-                       res.setText("ALERT: DONT'T PLAY");
-                       res.setTextColor(Color.parseColor("#f44141"));
-                       Toast.makeText(MainActivity.this, "ALERT",
+                       res.setText("Not Safe\nTo Play");
+                       res.setTextColor(Color.parseColor("#cc003a"));
+                       Toast.makeText(MainActivity.this, "Dont Step Out",
                                Toast.LENGTH_SHORT).show();
 
 
@@ -224,9 +224,6 @@ predict.setOnClickListener(new View.OnClickListener() {
 
                }
 
-
-
-
            }
        }, new Response.ErrorListener() {
            @Override
@@ -240,14 +237,12 @@ predict.setOnClickListener(new View.OnClickListener() {
            @Override
            protected Map<String, String> getParams() {
 
-
                Map<String, String> params = new HashMap<>();
                params.put("outlook",o);
                params.put("temperature",t);
                params.put("humidity",h);
                params.put("windy",w);
 
-               //  params.put("password",u_password);
                return params;
 
 
